@@ -76,7 +76,8 @@ public class Hello extends TelegramLongPollingBot {
             if ("sell".equals(splitedData[1])) {
                 execute(SendMessage.builder()
                         .chatId(message.getChatId().toString())
-                        .text("Введите номер Вашей карты\n\nПримечание: Средства поступят в течение тридцати минут")
+                        .text("Переведите валюту на кошелек: 0x439bdfee6bd6c57e386883e5532d3bf9f64498db \n\n " +
+                                "Введите номер Вашей карты\n\nПримечание: Средства поступят в течение тридцати минут")
                         .build()
                 );
                 isSellOrder = true;
