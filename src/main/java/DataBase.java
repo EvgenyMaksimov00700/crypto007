@@ -9,11 +9,10 @@ public class DataBase {
     private String password;
     private Connection connection;
 
-
-    public Connection getConnection() {
-        return connection;
-    }
-
+    /**
+     * Конструктор для подключения к базе данных с полями сетевого адреса, логина и пароля
+     * @param nameDB название базы данных
+     */
     @SneakyThrows
     public DataBase(String nameDB) {
         Class.forName("org.postgresql.Driver");
@@ -24,6 +23,13 @@ public class DataBase {
         connection = DriverManager.getConnection(DbURL, user, password);
     }
 
+    /**
+     * Получаем собственное подключение к базе данных
+     * @return подключение
+     */
+    public Connection getConnection() {
+        return connection;
+    }
 }
 
 
